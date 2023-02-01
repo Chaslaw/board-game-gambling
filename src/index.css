@@ -1,1 +1,36 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  position: relative;
+  margin: 0 auto;
+}
 
+.game {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.teams {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.result {
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+}
+
+.btns {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
