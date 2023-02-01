@@ -35,6 +35,7 @@ const data = [
     away: 'Belize',
     score: [8, 0]
   },
+];
 
-]
+
 
