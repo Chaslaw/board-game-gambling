@@ -37,5 +37,36 @@ const data = [
   },
 ];
 
+const getGameById = (id) => {
+  const selected = data.filter((item) => {
+    if (item.id === id) {
+      return true; // stay in array
+    }
+    return false; // not included
+  });
+  
+  if (selected[0]) {
+    return selected[0]
+  }
+  return null; // not found by id
+};
 
+
+
+let lastReturnedStart = 0;
+
+export const getGameStart = () => {
+  lastReturnedStart++;
+  const game = getGameById(lastReturnedStart);
+  
+  if (game) {
+    const res = {
+      ...game,
+      score: [0, 0]
+    };
+    return res;
+  } else {
+    return false;
+  }
+};
 

@@ -9,6 +9,7 @@ const appSlice = createSlice({
 
   reducers: {
     addGame(state, action) {
+      state.games = [...state.games, action.payload]
     },
     updateGame(state, action){
     },

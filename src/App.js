@@ -1,9 +1,20 @@
-
+import { useSelector, useDispatch } from 'react-redux'
+import { appActions } from './store/appSlice';
+import { getGameStart } from './utils/data';
 
 const App = () => {
+  
+  const dispatch = useDispatch()
 
+  const games = useSelector((state) => state.app.games)
 
-
+  const handleStart = () => {
+    const res = getGameStart();
+    if (res) {
+      const justStartedGame = res;
+      dispatch(appActions.addGame(justStartedGame))
+    }
+  };
 
 
   return (
@@ -11,28 +22,33 @@ const App = () => {
     <div className='main'>
 
       <h1>Copa America</h1>
-      <button className='btn'>START</button>
+      <button className='btn' onClick={handleStart}>START</button>
       <h3>Current Games</h3>
 
-      <div className="game">
-
-        <div className="teams">
-          <div className="team">Argentina</div>
-          <div className="team">-</div>
-          <div className="team">Paragway</div>
-        </div>
-
-        <div className="result">
-          <div className="numbers">3</div>
-          <div className="numbers">:</div>
-          <div className="numbers">4</div>
-        </div>
-
-        <div className="btns">
-          <button className="btn">UPDATE</button>
-          <button className="btn">FINSH</button>
-        </div>
-      </div>
+      
+      {games.map((game) => {
+            const { id, home, away, score } = game;
+              
+            return (
+                <div key={id} className="game-item">
+                  <div className="teams">
+                    <div className="team">{home}</div>
+                    <div className="team">{away}</div>
+                  </div>
+                  <div className="score">
+                    <div className="numbers">{score[0]}</div>
+                    <div className="hyphen">-</div>
+                    <div className="numbers">{score[1]}</div>
+                  </div>
+                  <div className="btns">
+                    <button>UPDATE</button>&nbsp;&nbsp;
+                    <button>FINISH</button>
+                  </div>
+                </div>
+              );
+            
+          })
+        }
     </div>
 
   )
