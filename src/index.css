@@ -14,6 +14,7 @@ body {
   border-radius: 2rem;
   padding: 1rem;
   color: #333;
+  top: 50px;
 }
 
 h1 {
@@ -41,21 +42,19 @@ h2 {
 
 .finished-games {
   display: flex;
-    width: 100%;
+  width: 100%;
 }
 
 .numbers {
   display: flex;
   align-items: center;
   align-content: center;
-align-self: center;
-justify-content: center;
+  align-self: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
   background-color: antiquewhite;
 }
-
-
 
 .teams {
   display: flex;

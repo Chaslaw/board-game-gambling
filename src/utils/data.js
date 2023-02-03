@@ -55,8 +55,6 @@ const getGameById = (id) => {
   return null; // not found by id
 };
 
-
-
 let lastReturnedStart = 0;
 
 export const getGameStart = () => {

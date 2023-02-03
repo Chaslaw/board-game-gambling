@@ -28,7 +28,6 @@ const _helperFinishGame = (games, id) => {
 };
 
 
-
 const appSlice = createSlice({
   name: 'start',
   initialState: {
