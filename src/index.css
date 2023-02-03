@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(172, 161, 161);
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -6,28 +10,73 @@
   width: 500px;
   position: relative;
   margin: 0 auto;
+  border: 2px solid #333;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: #333;
 }
 
-.game {
+h1 {
+  border-bottom: 1px solid black;
+}
+
+h3 {
+  border-bottom: 1px solid beige;
+}
+
+h2 {
+  width: 50%;
+  background-color: #c2e57a;
+  padding: 3px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.game-item {
   display: flex;
-  width: 500px;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.finished-games {
+  display: flex;
+    width: 100%;
+}
+
+.numbers {
+  display: flex;
   align-items: center;
   align-content: center;
-  margin-top: 20px;
+align-self: center;
+justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: antiquewhite;
 }
+
+
 
 .teams {
   display: flex;
-  width: 150px;
+  width: 180px;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.score {
+  display: flex;
+  width: 50px;
   justify-content: space-between;
 }
 
-.result {
+.final-score {
   display: flex;
-  width: 70px;
+  width: 90px;
   justify-content: space-between;
 }
+
 
 .btns {
   display: flex;

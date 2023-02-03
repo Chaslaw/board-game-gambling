@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const _helperUpdateGame = (games, payload) => {
+  console.log(payload)
   const updatedGames = games.map((item) => {
     if(item.id === payload.id){
       return {
@@ -12,6 +13,20 @@ const _helperUpdateGame = (games, payload) => {
   });
   return updatedGames;
 };
+
+const _helperFinishGame = (games, id) => {
+  const updatedGames = games.map((item) => {
+    if(item.id === id){
+      return {
+        ...item, 
+        finished: true
+      }; // update only targeted one
+    }
+    return item; // all other unchanged
+  });
+  return updatedGames;
+};
+
 
 
 const appSlice = createSlice({
@@ -28,7 +43,8 @@ const appSlice = createSlice({
       state.games = _helperUpdateGame(state.games, action.payload)
     },
     finishGame(state, action){
-    },
+      state.games = _helperFinishGame(state.games, action.payload)
+    }
   }
 });
 

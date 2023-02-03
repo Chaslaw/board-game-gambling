@@ -33,12 +33,15 @@ const data = [
     id: 6,
     home: 'Mexico',
     away: 'Belize',
-    score: [8, 0]
-  },
+    score: [8, 0],
+    sesion: true
+  }
 ];
 
 const getGameById = (id) => {
+  
   const selected = data.filter((item) => {
+    
     if (item.id === id) {
       return true; // stay in array
     }
@@ -47,7 +50,8 @@ const getGameById = (id) => {
   
   if (selected[0]) {
     return selected[0]
-  }
+  } 
+  
   return null; // not found by id
 };
 
