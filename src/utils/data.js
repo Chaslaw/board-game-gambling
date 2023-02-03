@@ -70,3 +70,18 @@ export const getGameStart = () => {
   }
 };
 
+export const getGameUpdate = (id) => {
+  // lastReturnedStart++;
+  const game = getGameById(id);
+  if (game) {
+    const res = {
+      ...game,
+      // score: [0, 0]
+    };
+    return res;
+  } else {
+    return false;
+  }
+};
+
+

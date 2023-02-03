@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { appActions } from './store/appSlice';
-import { getGameStart } from './utils/data';
+import { getGameStart, getGameUpdate } from './utils/data';
 
 const App = () => {
   
@@ -13,6 +13,14 @@ const App = () => {
     if (res) {
       const justStartedGame = res;
       dispatch(appActions.addGame(justStartedGame))
+    }
+  };
+
+  const _handleUpdate = (id) => {
+    const res = getGameUpdate(id);
+    if (res) {
+      const justUpdatedGame = res;
+      dispatch(appActions.updateGame(justUpdatedGame))
     }
   };
 
@@ -41,7 +49,7 @@ const App = () => {
                     <div className="numbers">{score[1]}</div>
                   </div>
                   <div className="btns">
-                    <button>UPDATE</button>&nbsp;&nbsp;
+                    <button onClick={(e) => {_handleUpdate(id)}}>UPDATE</button>&nbsp;&nbsp;
                     <button>FINISH</button>
                   </div>
                 </div>
